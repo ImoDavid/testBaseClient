@@ -1,0 +1,43 @@
+# Node modules directory
+node_modules/
+
+# Log files
+*.log
+
+# Environment variables
+.env
+
+# Build output
+dist/
+build/
+
+# Dependency directories
+bower_components/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE and editor directories
+.vscode/
+.idea/
+
+# npm cache
+.npm/
+
+# Yarn cache
+.yarn/
+
+# Next.js build output
+.next/
+
+# Prisma migration files
+.prisma/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Miscellaneous
+*.pid
+*.seed
+*.log.*
