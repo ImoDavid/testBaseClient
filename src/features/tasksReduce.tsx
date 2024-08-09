@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const BaseURL = 'http://localhost:3000';
+const BaseURL = 'https://testbaseserver-2.onrender.com/';
 
 const api = axios.create({
   baseURL: BaseURL,
