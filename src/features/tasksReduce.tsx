@@ -8,13 +8,7 @@ const api = axios.create({
 });
 
 const initialState = {
-  tasks: [
-    {
-      id: '1',
-      name: 'Task 1',
-      completed: false,
-    },
-  ],
+  tasks: [],
   loading: false,
   error: null,
   filterStatus: 'all',

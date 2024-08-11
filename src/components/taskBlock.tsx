@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
+import * as React from 'react';
+import { useEffect } from 'react';
 import { Box, Stack, Typography, styled } from '@mui/material';
 import { MdDelete } from 'react-icons/md';
 import { FaCircleCheck } from 'react-icons/fa6';
 import { useDispatch, useSelector } from 'react-redux';
 import { colors } from '../utils/globals';
+import { RootState, AppDispatch } from '../store';
 import {
   deleteTask,
   updateTask,
@@ -23,8 +25,10 @@ const TaskBlock = () => {
     title: string;
     completed?: boolean;
   }
-  const dispatch = useDispatch();
-  const { tasks, filterStatus } = useSelector((state) => state.tasks);
+  const dispatch = useDispatch<AppDispatch>();
+  const { tasks, filterStatus } = useSelector(
+    (state: RootState) => state.tasks,
+  );
 
   const handleDeleteClick = (taskId: string) => {
     dispatch(deleteTask(taskId)).then(() => {
@@ -46,9 +50,6 @@ const TaskBlock = () => {
     dispatch(setFilterStatus(status));
   };
 
-  useEffect(() => {
-    dispatch(fetchTasks());
-  }, [dispatch]);
 
   const filteredTasks = (tasks || []).filter((task: Task) => {
     if (filterStatus === 'completed') return task.completed;
