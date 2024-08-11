@@ -1,9 +1,15 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import HeaderText from '../components/headerText';
 import { colors } from '../utils/globals';
-
-
+type HeaderTextProps = {
+  title: string;
+  textColor?: string;
+  dividerColor?: string;
+  width?: string;
+  fontSize?: string[];
+  textAlign?: string;
+  alignItems?: string;
+};
 export default {
   title: 'Components/HeaderText',
   component: HeaderText,
@@ -12,33 +18,32 @@ export default {
     textColor: { control: 'color' },
     dividerColor: { control: 'color' },
     width: { control: 'text' },
-    fontSize: { control: 'array' },
+    fontSize: { control: 'object' }, 
     textAlign: { control: 'text' },
     alignItems: { control: 'text' },
   },
-} as ComponentMeta<typeof HeaderText>;
+} as Meta<HeaderTextProps>;
 
-const Template: ComponentStory<typeof HeaderText> = (args) => (
-  <HeaderText {...args} />
-);
-
-export const Default = Template.bind({});
-Default.args = {
-  title: 'Header Title',
+export const Default: StoryObj<typeof HeaderText> = {
+  args: {
+    title: 'Header Title',
+  },
 };
 
-export const CustomColors = Template.bind({});
-CustomColors.args = {
-  title: 'Custom Colors',
-  textColor: colors.OFF_WHITE,
-  dividerColor: colors.WHITE,
+export const CustomColors: StoryObj<typeof HeaderText> = {
+  args: {
+    title: 'Custom Colors',
+    textColor: colors.OFF_WHITE,
+    dividerColor: colors.WHITE,
+  },
 };
 
-export const CustomStyles = Template.bind({});
-CustomStyles.args = {
-  title: 'Custom Styles',
-  width: '20%',
-  fontSize: ['1.8rem', '2.5rem'],
-  textAlign: 'left',
-  alignItems: 'flex-start',
+export const CustomStyles: StoryObj<typeof HeaderText> = {
+  args: {
+    title: 'Custom Styles',
+    width: '20%',
+    fontSize: ['1.8rem', '2.5rem'],
+    textAlign: 'left',
+    alignItems: 'flex-start',
+  },
 };

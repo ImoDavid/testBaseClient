@@ -1,32 +1,29 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import PrimaryButton from '../components/primaryButton';
 
-// Default export with metadata for the component
 export default {
   title: 'Components/PrimaryButton',
   component: PrimaryButton,
   argTypes: {
     onClick: { action: 'clicked' },
   },
-} as ComponentMeta<typeof PrimaryButton>;
+} as Meta<typeof PrimaryButton>;
 
-const Template: ComponentStory<typeof PrimaryButton> = (args) => (
-  <PrimaryButton {...args} />
-);
-
-export const Default = Template.bind({});
-Default.args = {
-  text: 'Click Me',
+export const Default: StoryObj<typeof PrimaryButton> = {
+  args: {
+    text: 'Click Me',
+  },
 };
 
-export const WithCustomText = Template.bind({});
-WithCustomText.args = {
-  text: 'Custom Text',
+export const WithCustomText: StoryObj<typeof PrimaryButton> = {
+  args: {
+    text: 'Custom Text',
+  },
 };
 
-export const Disabled = Template.bind({});
-Disabled.args = {
-  text: 'Disabled',
-  onClick: undefined,
+export const Disabled: StoryObj<typeof PrimaryButton> = {
+  args: {
+    text: 'Disabled',
+    onClick: undefined,
+  },
 };
