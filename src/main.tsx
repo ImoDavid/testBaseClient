@@ -1,7 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App.tsx';
-import { store } from './store';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom/client';
+import App from './App';
+import store from './store';
 import { Provider } from 'react-redux';
 import './index.css';
 

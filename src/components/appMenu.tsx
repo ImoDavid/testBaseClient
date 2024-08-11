@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import * as React from 'react';
+import { useState } from 'react';
 import { Box, Stack, InputBase } from '@mui/material';
 import { styled, alpha } from '@mui/material/styles';
 import { colors } from '../utils/globals';
@@ -6,6 +7,7 @@ import { IoIosAddCircle } from 'react-icons/io';
 import PrimaryButton from './primaryButton';
 import { useDispatch } from 'react-redux';
 import { addTask } from '../features/tasksReduce';
+import store from '../store';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -54,7 +56,7 @@ const MenuBar = () => {
 
   const handleAddTask = () => {
     if (taskTitle.trim()) {
-      dispatch(addTask({ title: taskTitle }) as Action);
+      dispatch(addTask({ title: taskTitle }));
       setTaskTitle('');
     }
   };

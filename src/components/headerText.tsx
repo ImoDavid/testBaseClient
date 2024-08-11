@@ -13,7 +13,7 @@ interface HeaderTextProps {
 
 const HeaderText: React.FC<HeaderTextProps> = ({
   title,
-  textColor = colors.TITLE,
+  textColor = colors.BLACK,
   dividerColor = colors.ORANGE,
   width = '10%',
   fontSize = ['1.4rem', '2rem'],
